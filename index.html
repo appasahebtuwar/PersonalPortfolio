@@ -15,7 +15,30 @@
     <link rel="stylesheet" href="css/vendor/aos.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    
+
+<!-- <script>
+  function sendEmail() {
+    console.log('form submitted----')
+    Email.send({
+      Host: "smtp.gmail.com",
+      Username: "tuwar.appasaheb@gmail.com",
+      Password: "xexh deck xspl zhmt",
+      To: 'tuwar.appasaheb@gmail.com',
+      From: "tuwar.appasaheb@gmail.com",
+      Subject: "Sending Email using javascript",
+      Body: "Well that was easy!!",
+    })
+      .then(function (message) {
+        alert("mail sent successfully")
+      });
+}
+</script> -->
+
+
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -373,7 +396,7 @@
               <h3 class="mb-4 heading-h3"><span class="gsap-reveal">We can make it together</span></h3>
               <p class="lead gsap-reveal">None of us, including me, ever do great things. But we can all do small things, with great love, and together we can do something wonderful</p>
               <p class="mb-4 gsap-reveal">Without requirements or design, programming is the art of adding bugs to an empty text file.</p>
-              <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download my CV</a></p>
+              <p class="gsap-reveal"><a href="images/cv/AppasahebTuwarResume.pdf" class="btn btn-outline-pill btn-custom-light" download>Download my CV</a></p>
             </div>
           </div>
         </div>
@@ -890,7 +913,7 @@
           <div class="row justify-content-between">
             
             <div class="col-md-6">
-              <form method="post" class="form-outline-style-v1" id="contactForm">
+              <form method="post" class="form-outline-style-v1" id="contactForm" onsubmit="sendEmail()">
                 <div class="form-group row mb-0">
 
                   <div class="col-lg-6 form-group gsap-reveal">
@@ -908,7 +931,7 @@
                 </div>
                 <div class="form-group row gsap-reveal">
                     <div class="col-md-12 d-flex align-items-center">
-                      <input type="submit" class="btn btn-outline-pill btn-custom-light mr-3" onclick=sendEmail() value="Send Message">
+                      <input type="submit" class="btn btn-outline-pill btn-custom-light mr-3" value="Send Message">
                       <span class="submitting"></span>
                     </div>
                   </div>
@@ -989,6 +1012,24 @@
 
     
     <script type="text/javascript">
+
+
+      function sendEmail() {
+          console.log('form submitted')
+          Email.send({
+            SecureToken: 'b18423bf-0d37-46de-9321-85eb78e8e0bd',
+            To: 'appasaheb.tuwar@gmail.com',
+            From: "tuwar.appasaheb@gmail.com",
+            Subject: "Sending Email using javascript",
+            Body: "Well that was easy!!",
+          })
+            .then(function (message) {
+              alert(message)
+            });
+      }
+
+
+
       // function sendEmail(e) {
         // Email.send({
         //   Host: "smtp.gmail.com",
@@ -1011,21 +1052,36 @@
 
         
       // }
-      function sendEmail() {
-        Email.send({
-        Host: "smtp.elasticemail.com",
-        Username : "tuwar.appasaheb@gmail.com",
-        Password : "2846D19D80BD5A0086F2D915E2C177455586",
-        To : 'appasaheb.tuwar@easebuzz.in',
-        From : "tuwar.appasaheb@gmail.com", 
-        Subject : "email subject",
-        Body : "email body",
-        }).then(
-          message => alert("mail sent successfully")
-        );
-      }
+      // function sendEmail() {
+      //   console.log('form submitted')
 
+      //   Email.send({
+      //   Host: "smtp.elasticemail.com",
+      //   Username : "tuwar.appasaheb@gmail.com",
+      //   Password : "2846D19D80BD5A0086F2D915E2C177455586",
+      //   To : 'appasaheb.tuwar@easebuzz.in',
+      //   From : "tuwar.appasaheb@gmail.com", 
+      //   Subject : "email subject",
+      //   Body : "email body",
+      //   }).then(
+      //     message => alert("mail sent successfully")
+      //   );
+      // }
+      
 
+//       from twilio.rest import Client 
+ 
+//  account_sid = 'ACe1d635b9b177ccdeb91e5c62247ac58c' 
+//  auth_token = '[AuthToken]' 
+//  client = Client(account_sid, auth_token) 
+  
+//  message = client.messages.create( 
+//                                from_='whatsapp:+14155238886',  
+//                                body='Your appointment is coming up on July 21 at 3PM',      
+//                                to='whatsapp:+919975743990' 
+//                            ) 
+  
+//  print(message.sid)
       
     </script>
   </body>
